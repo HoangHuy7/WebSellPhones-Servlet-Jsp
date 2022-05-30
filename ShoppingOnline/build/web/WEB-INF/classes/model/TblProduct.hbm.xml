@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 31, 2022 1:13:34 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.TblProduct" table="tbl_product" catalog="shopping_online" optimistic-lock="version">
+        <id name="productId" type="java.lang.Integer">
+            <column name="ProductID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tblBrand" class="model.TblBrand" fetch="select">
+            <column name="BrandID" />
+        </many-to-one>
+        <many-to-one name="tblProductcategory" class="model.TblProductcategory" fetch="select">
+            <column name="CateID" />
+        </many-to-one>
+        <many-to-one name="tblSupplier" class="model.TblSupplier" fetch="select">
+            <column name="SupplierID" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="Name" length="250" not-null="true" unique="true" />
+        </property>
+        <property name="seoTilte" type="string">
+            <column name="SeoTilte" length="250" not-null="true" />
+        </property>
+        <property name="image" type="string">
+            <column name="Image" length="250" />
+        </property>
+        <property name="listImages" type="string">
+            <column name="ListImages" />
+        </property>
+        <property name="price" type="long">
+            <column name="Price" precision="18" scale="0" not-null="true" />
+        </property>
+        <property name="quantity" type="int">
+            <column name="Quantity" not-null="true" />
+        </property>
+        <property name="vat" type="int">
+            <column name="VAT" not-null="true" />
+        </property>
+        <property name="status" type="byte">
+            <column name="Status" not-null="true" />
+        </property>
+        <property name="warranty" type="int">
+            <column name="Warranty" not-null="true" />
+        </property>
+        <property name="hot" type="timestamp">
+            <column name="Hot" length="19" />
+        </property>
+        <property name="descriptions" type="string">
+            <column name="Descriptions" length="500" />
+        </property>
+        <property name="detail" type="string">
+            <column name="Detail" length="65535" />
+        </property>
+        <property name="views" type="int">
+            <column name="Views" not-null="true" />
+        </property>
+        <property name="metaKeywords" type="java.lang.Integer">
+            <column name="MetaKeywords" />
+        </property>
+        <property name="metaDescriptions" type="java.lang.Integer">
+            <column name="MetaDescriptions" />
+        </property>
+        <property name="createBy" type="java.lang.Integer">
+            <column name="CreateBy" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CreateDate" length="19" not-null="true" />
+        </property>
+        <property name="updateBy" type="java.lang.Integer">
+            <column name="UpdateBy" />
+        </property>
+        <property name="updateDate" type="java.lang.Integer">
+            <column name="UpdateDate" />
+        </property>
+        <one-to-one name="tblOrderdetail" class="model.TblOrderdetail"></one-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 31, 2022 1:13:34 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.TblUser" table="tbl_user" catalog="shopping_online" optimistic-lock="version">
+        <id name="userId" type="java.lang.Integer">
+            <column name="UserID" />
+            <generator class="identity" />
+        </id>
+        <property name="firstName" type="string">
+            <column name="firstName" length="50" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="lastName" length="50" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="50" not-null="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="11" not-null="true" />
+        </property>
+        <property name="status" type="short">
+            <column name="status" not-null="true" />
+        </property>
+        <property name="role" type="short">
+            <column name="role" not-null="true" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="createDate" length="19" not-null="true" />
+        </property>
+        <property name="createBy" type="java.lang.Integer">
+            <column name="createBy" />
+        </property>
+        <property name="updateDate" type="timestamp">
+            <column name="UpdateDate" length="19" />
+        </property>
+        <property name="updateBy" type="java.lang.Integer">
+            <column name="UpdateBy" />
+        </property>
+        <property name="lastLogin" type="timestamp">
+            <column name="lastLogin" length="19" />
+        </property>
+        <set name="tblOrders" table="tbl_order" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CustommerID" not-null="true" />
+            </key>
+            <one-to-many class="model.TblOrder" />
+        </set>
+    </class>
+</hibernate-mapping>

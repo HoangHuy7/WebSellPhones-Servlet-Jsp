@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 31, 2022 1:13:34 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.TblOrderdetail" table="tbl_orderdetail" catalog="shopping_online" optimistic-lock="version">
+        <id name="idProduct" type="java.lang.Integer">
+            <column name="id_product" />
+            <generator class="foreign">
+                <param name="property">tblProduct</param>
+            </generator>
+        </id>
+        <many-to-one name="tblOrder" class="model.TblOrder" fetch="select">
+            <column name="id_order" not-null="true" />
+        </many-to-one>
+        <one-to-one name="tblProduct" class="model.TblProduct" constrained="true"></one-to-one>
+        <property name="productName" type="int">
+            <column name="ProductName" not-null="true" />
+        </property>
+        <property name="quantity" type="int">
+            <column name="Quantity" not-null="true" />
+        </property>
+        <property name="price" type="int">
+            <column name="price" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

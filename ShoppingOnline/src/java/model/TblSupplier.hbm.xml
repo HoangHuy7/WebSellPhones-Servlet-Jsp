@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 31, 2022 1:13:34 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.TblSupplier" table="tbl_supplier" catalog="shopping_online" optimistic-lock="version">
+        <id name="supplierId" type="java.lang.Integer">
+            <column name="SupplierID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="250" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="50" />
+        </property>
+        <property name="phones" type="string">
+            <column name="Phones" length="11" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="Address" length="250" />
+        </property>
+        <set name="tblProducts" table="tbl_product" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SupplierID" />
+            </key>
+            <one-to-many class="model.TblProduct" />
+        </set>
+    </class>
+</hibernate-mapping>

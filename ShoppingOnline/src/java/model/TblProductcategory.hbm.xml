@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 31, 2022 1:13:34 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.TblProductcategory" table="tbl_productcategory" catalog="shopping_online" optimistic-lock="version">
+        <id name="categoryId" type="java.lang.Integer">
+            <column name="CategoryID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tblProductcategory" class="model.TblProductcategory" fetch="select">
+            <column name="ParentID" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="Name" length="250" not-null="true" />
+        </property>
+        <property name="seoTilte" type="int">
+            <column name="SeoTilte" not-null="true" />
+        </property>
+        <property name="status" type="byte">
+            <column name="Status" not-null="true" />
+        </property>
+        <property name="sort" type="int">
+            <column name="Sort" not-null="true" />
+        </property>
+        <property name="metaKeywords" type="string">
+            <column name="MetaKeywords" length="250" />
+        </property>
+        <property name="metaDescriptions" type="string">
+            <column name="MetaDescriptions" length="250" />
+        </property>
+        <property name="createBy" type="java.lang.Integer">
+            <column name="CreateBy" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CreateDate" length="19" not-null="true" />
+        </property>
+        <property name="updateBy" type="java.lang.Integer">
+            <column name="UpdateBy" />
+        </property>
+        <property name="updateDate" type="timestamp">
+            <column name="UpdateDate" length="19" />
+        </property>
+        <set name="tblProducts" table="tbl_product" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CateID" />
+            </key>
+            <one-to-many class="model.TblProduct" />
+        </set>
+        <set name="tblProductcategories" table="tbl_productcategory" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ParentID" />
+            </key>
+            <one-to-many class="model.TblProductcategory" />
+        </set>
+    </class>
+</hibernate-mapping>
