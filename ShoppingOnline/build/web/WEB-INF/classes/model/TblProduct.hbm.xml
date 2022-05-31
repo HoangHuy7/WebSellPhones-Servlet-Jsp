@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated May 31, 2022 1:13:34 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated May 31, 2022 8:33:19 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="model.TblProduct" table="tbl_product" catalog="shopping_online" optimistic-lock="version">
         <id name="productId" type="java.lang.Integer">
@@ -34,6 +34,9 @@
         </property>
         <property name="quantity" type="int">
             <column name="Quantity" not-null="true" />
+        </property>
+        <property name="color" type="string">
+            <column name="Color" length="20" not-null="true" />
         </property>
         <property name="vat" type="int">
             <column name="VAT" not-null="true" />

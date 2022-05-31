@@ -1,0 +1,20 @@
+SMAP
+product_jsp.java
+JSP
+*S JSP
+*F
++ 0 product.jsp
+views/web/product.jsp
++ 1 header.jsp
+common/web/header.jsp
++ 2 footer.jsp
+common/web/footer.jsp
+*L
+5,18:61
+22:297,5
+22,4:81
+1#1,41:85
+25#0,93:126
+1#2,51:219
+117#0,10:270
+*E

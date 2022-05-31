@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated May 31, 2022 1:13:34 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated May 31, 2022 8:33:19 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="model.TblProductcategory" table="tbl_productcategory" catalog="shopping_online" optimistic-lock="version">
         <id name="categoryId" type="java.lang.Integer">
@@ -14,14 +14,11 @@
         <property name="name" type="string">
             <column name="Name" length="250" not-null="true" />
         </property>
-        <property name="seoTilte" type="int">
-            <column name="SeoTilte" not-null="true" />
+        <property name="seoTilte" type="string">
+            <column name="SeoTilte" length="250" not-null="true" />
         </property>
         <property name="status" type="byte">
             <column name="Status" not-null="true" />
-        </property>
-        <property name="sort" type="int">
-            <column name="Sort" not-null="true" />
         </property>
         <property name="metaKeywords" type="string">
             <column name="MetaKeywords" length="250" />

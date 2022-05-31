@@ -7,11 +7,17 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.TblProduct;
+import org.hibernate.Session;
+import service.ProductService;
+import util.HibernateUtil;
 
 /**
  *
@@ -20,6 +26,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "productController", urlPatterns = {"/product"})
 public class productController extends HttpServlet {
 
+    private final Session ss = HibernateUtil.openSession();
+    private final ProductService prodService = new ProductService(ss);
+    
+    
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -58,7 +69,20 @@ public class productController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/views/web/product.jsp").forward(request, response);
+        try {
+            response.setContentType("text/html;charset=UTF-8");
+            request.setCharacterEncoding("UTF-8");
+            HttpSession session = request.getSession(true);
+            List<TblProduct> listProduct = (List<TblProduct>) session.getAttribute("listProduct");
+            if (listProduct == null) {
+                listProduct = prodService.findAll();
+            }
+            session.setAttribute("listProduct", listProduct);
+            request.getRequestDispatcher("/views/web/product.jsp").forward(request, response);
+        } catch (IOException | ServletException e) {
+            e.printStackTrace();
+        }
+        
     }
 
     /**

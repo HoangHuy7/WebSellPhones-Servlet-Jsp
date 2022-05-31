@@ -1,5 +1,5 @@
 package model;
-// Generated May 31, 2022 1:13:33 AM by Hibernate Tools 4.3.1
+// Generated May 31, 2022 8:33:18 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -20,6 +20,7 @@ public class TblProduct  implements java.io.Serializable {
      private String listImages;
      private long price;
      private int quantity;
+     private String color;
      private int vat;
      private byte status;
      private int warranty;
@@ -39,18 +40,19 @@ public class TblProduct  implements java.io.Serializable {
     }
 
 	
-    public TblProduct(String name, String seoTilte, long price, int quantity, int vat, byte status, int warranty, int views, Date createDate) {
+    public TblProduct(String name, String seoTilte, long price, int quantity, String color, int vat, byte status, int warranty, int views, Date createDate) {
         this.name = name;
         this.seoTilte = seoTilte;
         this.price = price;
         this.quantity = quantity;
+        this.color = color;
         this.vat = vat;
         this.status = status;
         this.warranty = warranty;
         this.views = views;
         this.createDate = createDate;
     }
-    public TblProduct(TblBrand tblBrand, TblProductcategory tblProductcategory, TblSupplier tblSupplier, String name, String seoTilte, String image, String listImages, long price, int quantity, int vat, byte status, int warranty, Date hot, String descriptions, String detail, int views, Integer metaKeywords, Integer metaDescriptions, Integer createBy, Date createDate, Integer updateBy, Integer updateDate, TblOrderdetail tblOrderdetail) {
+    public TblProduct(TblBrand tblBrand, TblProductcategory tblProductcategory, TblSupplier tblSupplier, String name, String seoTilte, String image, String listImages, long price, int quantity, String color, int vat, byte status, int warranty, Date hot, String descriptions, String detail, int views, Integer metaKeywords, Integer metaDescriptions, Integer createBy, Date createDate, Integer updateBy, Integer updateDate, TblOrderdetail tblOrderdetail) {
        this.tblBrand = tblBrand;
        this.tblProductcategory = tblProductcategory;
        this.tblSupplier = tblSupplier;
@@ -60,6 +62,7 @@ public class TblProduct  implements java.io.Serializable {
        this.listImages = listImages;
        this.price = price;
        this.quantity = quantity;
+       this.color = color;
        this.vat = vat;
        this.status = status;
        this.warranty = warranty;
@@ -145,6 +148,13 @@ public class TblProduct  implements java.io.Serializable {
     
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+    public String getColor() {
+        return this.color;
+    }
+    
+    public void setColor(String color) {
+        this.color = color;
     }
     public int getVat() {
         return this.vat;

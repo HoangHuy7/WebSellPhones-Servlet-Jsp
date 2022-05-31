@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Simple Ecommerce</a>
+        <a class="navbar-brand" href="home">HuyZone</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,7 +15,7 @@
                     <a class="nav-link" href="product">Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="product.html">Cart</a>
+                    <a class="nav-link" href="product.html">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>

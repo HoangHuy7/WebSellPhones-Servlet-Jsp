@@ -47,5 +47,10 @@ Contributor(s):
     <property name="hibernate.connection.username">root</property>
     <mapping resource="model/TblProductcategory.hbm.xml"/>
     <mapping resource="model/TblUser.hbm.xml"/>
+    <mapping resource="model/TblSupplier.hbm.xml"/>
+    <mapping resource="model/TblBrand.hbm.xml"/>
+    <mapping resource="model/TblOrder.hbm.xml"/>
+    <mapping resource="model/TblProduct.hbm.xml"/>
+    <mapping resource="model/TblOrderdetail.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

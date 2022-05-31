@@ -1,5 +1,5 @@
 package model;
-// Generated May 31, 2022 1:13:33 AM by Hibernate Tools 4.3.1
+// Generated May 31, 2022 8:33:18 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -15,9 +15,8 @@ public class TblProductcategory  implements java.io.Serializable {
      private Integer categoryId;
      private TblProductcategory tblProductcategory;
      private String name;
-     private int seoTilte;
+     private String seoTilte;
      private byte status;
-     private int sort;
      private String metaKeywords;
      private String metaDescriptions;
      private Integer createBy;
@@ -31,19 +30,17 @@ public class TblProductcategory  implements java.io.Serializable {
     }
 
 	
-    public TblProductcategory(String name, int seoTilte, byte status, int sort, Date createDate) {
+    public TblProductcategory(String name, String seoTilte, byte status, Date createDate) {
         this.name = name;
         this.seoTilte = seoTilte;
         this.status = status;
-        this.sort = sort;
         this.createDate = createDate;
     }
-    public TblProductcategory(TblProductcategory tblProductcategory, String name, int seoTilte, byte status, int sort, String metaKeywords, String metaDescriptions, Integer createBy, Date createDate, Integer updateBy, Date updateDate, Set<TblProduct> tblProducts, Set<TblProductcategory> tblProductcategories) {
+    public TblProductcategory(TblProductcategory tblProductcategory, String name, String seoTilte, byte status, String metaKeywords, String metaDescriptions, Integer createBy, Date createDate, Integer updateBy, Date updateDate, Set<TblProduct> tblProducts, Set<TblProductcategory> tblProductcategories) {
        this.tblProductcategory = tblProductcategory;
        this.name = name;
        this.seoTilte = seoTilte;
        this.status = status;
-       this.sort = sort;
        this.metaKeywords = metaKeywords;
        this.metaDescriptions = metaDescriptions;
        this.createBy = createBy;
@@ -75,11 +72,11 @@ public class TblProductcategory  implements java.io.Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    public int getSeoTilte() {
+    public String getSeoTilte() {
         return this.seoTilte;
     }
     
-    public void setSeoTilte(int seoTilte) {
+    public void setSeoTilte(String seoTilte) {
         this.seoTilte = seoTilte;
     }
     public byte getStatus() {
@@ -88,13 +85,6 @@ public class TblProductcategory  implements java.io.Serializable {
     
     public void setStatus(byte status) {
         this.status = status;
-    }
-    public int getSort() {
-        return this.sort;
-    }
-    
-    public void setSort(int sort) {
-        this.sort = sort;
     }
     public String getMetaKeywords() {
         return this.metaKeywords;
