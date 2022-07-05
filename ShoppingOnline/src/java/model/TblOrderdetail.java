@@ -1,5 +1,5 @@
 package model;
-// Generated May 31, 2022 8:33:18 PM by Hibernate Tools 4.3.1
+// Generated Jun 7, 2022 11:30:50 PM by Hibernate Tools 4.3.1
 
 
 
@@ -12,19 +12,21 @@ public class TblOrderdetail  implements java.io.Serializable {
      private Integer idProduct;
      private TblOrder tblOrder;
      private TblProduct tblProduct;
-     private int productName;
+     private String productName;
      private int quantity;
-     private int price;
+     private long price;
+     private long total;
 
     public TblOrderdetail() {
     }
 
-    public TblOrderdetail(TblOrder tblOrder, TblProduct tblProduct, int productName, int quantity, int price) {
+    public TblOrderdetail(TblOrder tblOrder, TblProduct tblProduct, String productName, int quantity, long price, long total) {
        this.tblOrder = tblOrder;
        this.tblProduct = tblProduct;
        this.productName = productName;
        this.quantity = quantity;
        this.price = price;
+       this.total = total;
     }
    
     public Integer getIdProduct() {
@@ -48,11 +50,11 @@ public class TblOrderdetail  implements java.io.Serializable {
     public void setTblProduct(TblProduct tblProduct) {
         this.tblProduct = tblProduct;
     }
-    public int getProductName() {
+    public String getProductName() {
         return this.productName;
     }
     
-    public void setProductName(int productName) {
+    public void setProductName(String productName) {
         this.productName = productName;
     }
     public int getQuantity() {
@@ -62,12 +64,19 @@ public class TblOrderdetail  implements java.io.Serializable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    public int getPrice() {
+    public long getPrice() {
         return this.price;
     }
     
-    public void setPrice(int price) {
+    public void setPrice(long price) {
         this.price = price;
+    }
+    public long getTotal() {
+        return this.total;
+    }
+    
+    public void setTotal(long total) {
+        this.total = total;
     }
 
 

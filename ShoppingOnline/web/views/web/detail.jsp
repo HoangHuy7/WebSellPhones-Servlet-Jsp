@@ -56,7 +56,7 @@
                             </div>
                         </div>
                     </div>
-
+                                    
                     <!-- Add to cart -->
                     <div class="col-12 col-lg-6 add_to_cart_block">
                         <div class="card bg-light mb-3">
@@ -64,7 +64,8 @@
                                 <h3 class="modal-title text-center" id="productModalLabel">${prod.name}</h3>
                                 <p class="price">${prod.price} đ</p>
                                 <p class="price_discounted">${prod.price + 200} đ</p>
-                                <form method="get" action="cart.html">
+                                <form method="post" action="cart" >
+                                    
                                     <div class="form-group">
                                         <label for="colors">Color</label>
                                         <select class="custom-select" id="colors">
@@ -73,6 +74,7 @@
                                             <option value="2">Red</option>
                                             <option value="3">Green "</option>
                                         </select>
+                                        <input type="hidden" class="form-control"  id="productId" name="productId"  value="${prod.productId}">
                                     </div>
                                     <div class="form-group">
                                         <label>Quantity :</label>
@@ -89,10 +91,11 @@
                                                 </button>
                                             </div>
                                         </div>
-                                    </div>          
-                                            <a href=""  onclick="this.href='cart?id=${prod.productId}&quantity=' + document.getElementById('quantity').value"  class="btn btn-success btn-lg btn-block text-uppercase">
-                                        <i class="fa fa-shopping-cart"></i> Add To Cart
-                                    </a>
+                                    </div>      
+
+                                    <button type="button" onclick="alertCart()" class="btn btn-success btn-lg btn-block text-uppercase ${user != null?"d-none":""}">them vao gio hang</button>
+
+                                    <button type="submit"  class="btn btn-success btn-lg btn-block text-uppercase ${user != null?"":"d-none"}" name="action" value="addToCard">them vao gio hang</button>
                                 </form>
                                 <div class="product_rassurance">
                                     <ul class="list-inline">
@@ -213,25 +216,29 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" type="text/javascript"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" type="text/javascript"></script>
         <script type="text/javascript">
-            //Plus & Minus for Quantity product
-            $(document).ready(function () {
-                var quantity = 1;
+                                            //Plus & Minus for Quantity product
+                                            $(document).ready(function () {
+                                                var quantity = 1;
 
-                $('.quantity-right-plus').click(function (e) {
-                    e.preventDefault();
-                    var quantity = parseInt($('#quantity').val());
-                    $('#quantity').val(quantity + 1);
-                });
+                                                $('.quantity-right-plus').click(function (e) {
+                                                    e.preventDefault();
+                                                    var quantity = parseInt($('#quantity').val());
+                                                    $('#quantity').val(quantity + 1);
+                                                });
 
-                $('.quantity-left-minus').click(function (e) {
-                    e.preventDefault();
-                    var quantity = parseInt($('#quantity').val());
-                    if (quantity > 1) {
-                        $('#quantity').val(quantity - 1);
-                    }
-                });
+                                                $('.quantity-left-minus').click(function (e) {
+                                                    e.preventDefault();
+                                                    var quantity = parseInt($('#quantity').val());
+                                                    if (quantity > 1) {
+                                                        $('#quantity').val(quantity - 1);
+                                                    }
+                                                });
 
-            });
+                                            });
+                                            function alertCart() {
+                                                alert("Ban chua dang nhap");
+                                            }
         </script>
-    </body>
+    </script>
+</body>
 </html>

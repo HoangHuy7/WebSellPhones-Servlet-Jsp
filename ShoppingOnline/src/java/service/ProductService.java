@@ -26,7 +26,7 @@ public class ProductService {
     }
 
     public List<TblProduct> findAll() {
-        
+
         List<TblProduct> listProduct = null;
         Transaction tran = null;
         try {
@@ -40,6 +40,7 @@ public class ProductService {
         }
         return listProduct;
     }
+
     public TblProduct findById(int id) {
         TblProduct product = null;
         Transaction tran = null;
@@ -55,4 +56,19 @@ public class ProductService {
         return product;
     }
 
+    public boolean insert(TblProduct t) {
+
+        Transaction tran = null;
+        try {
+            tran = session.beginTransaction();
+            prodDao.insert(t);
+            tran.commit();
+            return true;
+        } catch (Exception e) {
+            if (tran != null) {
+                tran.rollback();
+            }
+            return false;
+        }
+    }
 }

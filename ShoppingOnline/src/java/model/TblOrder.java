@@ -1,7 +1,8 @@
 package model;
-// Generated May 31, 2022 8:33:18 PM by Hibernate Tools 4.3.1
+// Generated Jun 7, 2022 11:30:50 PM by Hibernate Tools 4.3.1
 
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,10 +14,10 @@ public class TblOrder  implements java.io.Serializable {
 
      private Integer orderId;
      private TblUser tblUser;
-     private int orderDate;
+     private Date orderDate;
      private int status;
      private byte delivered;
-     private int deliveryDate;
+     private Date deliveryDate;
      private Integer discount;
      private long total;
      private Set<TblOrderdetail> tblOrderdetails = new HashSet<TblOrderdetail>(0);
@@ -25,15 +26,14 @@ public class TblOrder  implements java.io.Serializable {
     }
 
 	
-    public TblOrder(TblUser tblUser, int orderDate, int status, byte delivered, int deliveryDate, long total) {
+    public TblOrder(TblUser tblUser, Date orderDate, int status, byte delivered, long total) {
         this.tblUser = tblUser;
         this.orderDate = orderDate;
         this.status = status;
         this.delivered = delivered;
-        this.deliveryDate = deliveryDate;
         this.total = total;
     }
-    public TblOrder(TblUser tblUser, int orderDate, int status, byte delivered, int deliveryDate, Integer discount, long total, Set<TblOrderdetail> tblOrderdetails) {
+    public TblOrder(TblUser tblUser, Date orderDate, int status, byte delivered, Date deliveryDate, Integer discount, long total, Set<TblOrderdetail> tblOrderdetails) {
        this.tblUser = tblUser;
        this.orderDate = orderDate;
        this.status = status;
@@ -58,11 +58,11 @@ public class TblOrder  implements java.io.Serializable {
     public void setTblUser(TblUser tblUser) {
         this.tblUser = tblUser;
     }
-    public int getOrderDate() {
+    public Date getOrderDate() {
         return this.orderDate;
     }
     
-    public void setOrderDate(int orderDate) {
+    public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
     }
     public int getStatus() {
@@ -79,11 +79,11 @@ public class TblOrder  implements java.io.Serializable {
     public void setDelivered(byte delivered) {
         this.delivered = delivered;
     }
-    public int getDeliveryDate() {
+    public Date getDeliveryDate() {
         return this.deliveryDate;
     }
     
-    public void setDeliveryDate(int deliveryDate) {
+    public void setDeliveryDate(Date deliveryDate) {
         this.deliveryDate = deliveryDate;
     }
     public Integer getDiscount() {

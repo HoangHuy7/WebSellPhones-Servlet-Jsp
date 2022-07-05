@@ -14,14 +14,15 @@ import org.hibernate.Session;
  *
  * @author LENOVO
  */
-public class ProductDao implements IGenericDao<TblProduct>{
+public class ProductDao implements IGenericDao<TblProduct> {
 
     private final Session session;
 
     public ProductDao(Session session) {
         this.session = session;
     }
-    
+
+    @SuppressWarnings("unchecked")
     @Override
     public List<TblProduct> findAll() {
         return session.createQuery("from TblProduct").list();
@@ -34,7 +35,8 @@ public class ProductDao implements IGenericDao<TblProduct>{
 
     @Override
     public boolean insert(TblProduct t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int flag =  (int) session.save(t);
+        return flag > -1;
     }
 
     @Override
@@ -46,5 +48,5 @@ public class ProductDao implements IGenericDao<TblProduct>{
     public boolean update(TblProduct t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

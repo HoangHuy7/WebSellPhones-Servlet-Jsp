@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated May 31, 2022 8:33:19 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Jun 7, 2022 11:30:51 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="model.TblOrder" table="tbl_order" catalog="shopping_online" optimistic-lock="version">
         <id name="orderId" type="java.lang.Integer">
@@ -11,8 +11,8 @@
         <many-to-one name="tblUser" class="model.TblUser" fetch="select">
             <column name="CustommerID" not-null="true" />
         </many-to-one>
-        <property name="orderDate" type="int">
-            <column name="OrderDate" not-null="true" />
+        <property name="orderDate" type="timestamp">
+            <column name="OrderDate" length="19" not-null="true" />
         </property>
         <property name="status" type="int">
             <column name="Status" not-null="true" />
@@ -20,8 +20,8 @@
         <property name="delivered" type="byte">
             <column name="Delivered" not-null="true" />
         </property>
-        <property name="deliveryDate" type="int">
-            <column name="DeliveryDate" not-null="true" />
+        <property name="deliveryDate" type="timestamp">
+            <column name="DeliveryDate" length="19" />
         </property>
         <property name="discount" type="java.lang.Integer">
             <column name="Discount" />

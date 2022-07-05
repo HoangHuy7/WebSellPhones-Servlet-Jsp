@@ -1,5 +1,5 @@
 package model;
-// Generated May 31, 2022 8:33:18 PM by Hibernate Tools 4.3.1
+// Generated Jun 7, 2022 11:30:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -18,8 +18,8 @@ public class TblUser  implements java.io.Serializable {
      private String email;
      private String password;
      private String phone;
-     private short status;
-     private short role;
+     private byte status;
+     private int role;
      private Date createDate;
      private Integer createBy;
      private Date updateDate;
@@ -31,7 +31,7 @@ public class TblUser  implements java.io.Serializable {
     }
 
 	
-    public TblUser(String firstName, String lastName, String email, String password, String phone, short status, short role, Date createDate) {
+    public TblUser(String firstName, String lastName, String email, String password, String phone, byte status, int role, Date createDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -41,7 +41,7 @@ public class TblUser  implements java.io.Serializable {
         this.role = role;
         this.createDate = createDate;
     }
-    public TblUser(String firstName, String lastName, String email, String password, String phone, short status, short role, Date createDate, Integer createBy, Date updateDate, Integer updateBy, Date lastLogin, Set<TblOrder> tblOrders) {
+    public TblUser(String firstName, String lastName, String email, String password, String phone, byte status, int role, Date createDate, Integer createBy, Date updateDate, Integer updateBy, Date lastLogin, Set<TblOrder> tblOrders) {
        this.firstName = firstName;
        this.lastName = lastName;
        this.email = email;
@@ -99,18 +99,18 @@ public class TblUser  implements java.io.Serializable {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public short getStatus() {
+    public byte getStatus() {
         return this.status;
     }
     
-    public void setStatus(short status) {
+    public void setStatus(byte status) {
         this.status = status;
     }
-    public short getRole() {
+    public int getRole() {
         return this.role;
     }
     
-    public void setRole(short role) {
+    public void setRole(int role) {
         this.role = role;
     }
     public Date getCreateDate() {

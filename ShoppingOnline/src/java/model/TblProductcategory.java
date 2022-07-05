@@ -1,5 +1,5 @@
 package model;
-// Generated May 31, 2022 8:33:18 PM by Hibernate Tools 4.3.1
+// Generated Jun 7, 2022 11:30:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -36,7 +36,9 @@ public class TblProductcategory  implements java.io.Serializable {
         this.status = status;
         this.createDate = createDate;
     }
-    public TblProductcategory(TblProductcategory tblProductcategory, String name, String seoTilte, byte status, String metaKeywords, String metaDescriptions, Integer createBy, Date createDate, Integer updateBy, Date updateDate, Set<TblProduct> tblProducts, Set<TblProductcategory> tblProductcategories) {
+    public TblProductcategory(TblProductcategory tblProductcategory, String name, String seoTilte, byte status, 
+            String metaKeywords, String metaDescriptions, Integer createBy, Date createDate, Integer updateBy,
+            Date updateDate, Set<TblProduct> tblProducts, Set<TblProductcategory> tblProductcategories) {
        this.tblProductcategory = tblProductcategory;
        this.name = name;
        this.seoTilte = seoTilte;

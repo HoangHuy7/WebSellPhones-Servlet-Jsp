@@ -77,7 +77,8 @@
                                     <div class="card">
                                         <img class="card-img-top" src="<c:url value="${p.image}" />" alt="Card image cap">
                                         <div class="card-body">
-                                            <h4 class="card-title"><a href="detailProduct?id=${p.productId}" title="View Product">${p.name}</a></h4>
+<!--                                            <h4 class="card-title"><a href="detailProduct?id=${p.productId}" title="View Product">${p.name}</a></h4>-->
+                                            <h4 class="card-title"><a href=" <c:url value="detail?id=${p.productId}"><c:param name="action" value="detailProduct"/></c:url> " title="View Product">${p.name}</a></h4>
                                             <p class="card-text">day la san pham</p>
                                             <div class="row">
                                                 <div class="col">

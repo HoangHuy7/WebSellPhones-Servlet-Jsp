@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated May 31, 2022 8:33:19 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Jun 7, 2022 11:30:51 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="model.TblUser" table="tbl_user" catalog="shopping_online" optimistic-lock="version">
         <id name="userId" type="java.lang.Integer">
@@ -23,10 +23,10 @@
         <property name="phone" type="string">
             <column name="phone" length="11" not-null="true" />
         </property>
-        <property name="status" type="short">
+        <property name="status" type="byte">
             <column name="status" not-null="true" />
         </property>
-        <property name="role" type="short">
+        <property name="role" type="int">
             <column name="role" not-null="true" />
         </property>
         <property name="createDate" type="timestamp">

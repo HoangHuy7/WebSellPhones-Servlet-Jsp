@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated May 31, 2022 8:33:19 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Jun 7, 2022 11:30:51 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="model.TblOrderdetail" table="tbl_orderdetail" catalog="shopping_online" optimistic-lock="version">
         <id name="idProduct" type="java.lang.Integer">
@@ -14,14 +14,17 @@
             <column name="id_order" not-null="true" />
         </many-to-one>
         <one-to-one name="tblProduct" class="model.TblProduct" constrained="true"></one-to-one>
-        <property name="productName" type="int">
-            <column name="ProductName" not-null="true" />
+        <property name="productName" type="string">
+            <column name="ProductName" length="50" not-null="true" />
         </property>
         <property name="quantity" type="int">
             <column name="Quantity" not-null="true" />
         </property>
-        <property name="price" type="int">
-            <column name="price" not-null="true" />
+        <property name="price" type="long">
+            <column name="price" precision="18" scale="0" not-null="true" />
+        </property>
+        <property name="total" type="long">
+            <column name="total" precision="18" scale="0" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

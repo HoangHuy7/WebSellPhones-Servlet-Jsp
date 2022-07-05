@@ -41,11 +41,11 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="shopping_online"/>
-  <table-filter match-name="tbl_product"/>
-  <table-filter match-name="tbl_productcategory"/>
-  <table-filter match-name="tbl_supplier"/>
-  <table-filter match-name="tbl_orderdetail"/>
-  <table-filter match-name="tbl_user"/>
   <table-filter match-name="tbl_order"/>
   <table-filter match-name="tbl_brand"/>
+  <table-filter match-name="tbl_orderdetail"/>
+  <table-filter match-name="tbl_product"/>
+  <table-filter match-name="tbl_productcategory"/>
+  <table-filter match-name="tbl_user"/>
+  <table-filter match-name="tbl_supplier"/>
 </hibernate-reverse-engineering>
